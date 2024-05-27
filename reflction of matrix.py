@@ -1,0 +1,18 @@
+from sympy import *
+x=Point(2,1)
+y=Point(-4,2)
+z=Point(5,6)
+print("reflection through Y-axis")
+print(x.transform(Matrix([[-1,0,0],[0,1,0],[0,0,1]])))
+print("reflection through X-axis")
+print(y.transform(Matrix([[1,0,0],[0,-1,0],[0,0,1]])))
+print("reflection through Origin")
+print(x.transform(Matrix([[-1,0,0],[0,-1,0],[0,0,1]])))
+print("reflection through Y=X")
+print(x.transform(Matrix([[0,1,0],[1,0,0],[0,0,1]])))
+print("reflection through Y=-X")
+print(x.transform(Matrix([[0,-1,0],[-1,0,0],[0,0,1]])))
+
+a,b=symbols('a b')
+A=Point(5,3)
+print(A.reflect(Line(y-x-1)))
